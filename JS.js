@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 // String is Immutable,Original string doesn't changes
 
 // let n = "praShant "
@@ -262,8 +262,180 @@
 
 // const odd = (n) => (n%2===1) //single parameter and single return
 //     // return n % 2 === 1;
-
 // console.log(odd(3))
 
+// Hoisting(declaration to top)
+// a=10
+// console.log(a)
+// var a;
 
+// test();
+// function test() {
+//     console.log("test")
+// }
 
+// test2()
+// const test2=function() {
+//     console.log("test")
+// }
+
+// Functions inside another functions
+// function test() {
+//     var myName = function () {
+//         console.log("Prashant Kumar")
+//     }
+//     var myFather = () => {
+//         console.log("ALok SIngh")
+//     }
+//     console.log("test")
+//     myName();
+//     myFather()
+// }
+// test();
+
+// Lexical Scope(Keep looking for variable value in first itself,then in function where that function is written,first in it ,then above function)
+//   const val=1
+// function test() {
+//     const val = 2;
+//     const test1 = function () {
+//         const val=4
+//         console.log("inside test1",val)
+//     }
+//     console.log(val)
+//     test1()
+// }
+// console.log(val)
+//  test()
+
+// Block Scope(let/const) And var is Function Scope
+// {
+//     let val = 10
+//     console.log(val)
+// }
+// {
+//     let val = 20
+//     console.log(val)
+// }
+// let val = 30;
+// console.log(val)
+// const val=30
+// function test() {
+//     if (1) { //block so can't be access
+//         let val = 23;
+//     }
+//     // const val = 2;
+//     const test1 = function () {
+//         // const val=4
+//         console.log("inside test1",val)
+//     }
+//     console.log(val)
+//     // test1()
+// }
+// test();
+
+// default Parameter
+// function add(a, b /*= 0*/) { //if b argument is nothing then default b
+//     if (typeof b === "undefined") {
+//         b = 0;
+//     }
+//     return a + b;
+// }
+// console.log(add(4))
+
+// rest parameter Remaining parameter into a parameter as array
+// function add(a, b, ...c) {
+//     console.log(`c is ${c}`)
+// }
+// add(1, 2, 3, 4, 5)
+
+// Parameter destructuring
+// const person = {
+//     name:"pk",
+//     age:24
+// }
+// function test({ name, age }) {
+//     console.log(name);
+//     console.log(age)
+// }
+// test(person)
+
+// Callback Function (passing another function as argument of other function and calling that function)
+// function test2(name) {
+//     console.log("inside test2")
+//     console.log(`${name}`)
+// }
+// function test(a) {
+//     console.log("inside test")
+//     console.log(a)
+//     test2("prashant")
+// }
+// test(test2)
+
+// function can return anything,i.e int,string,object and even function;
+// function myFunc() {
+//     function hello() {
+//         console.log("hello world")
+//     }
+//     return hello;
+// }
+// function hello() {
+//     console.log("hello world")
+// }
+// myFunc()()
+
+// Higher Order function >> parameter as function and return a function.
+
+// ARRAY METHODS
+
+// forEach() method=>it is like callback function it takes some function as arugument and call it for every value of array.
+// annonymous function can also be created inside the forEach();
+// let arr = [2, 3, 4, 5, 6]
+// function multi2(num) {
+//     console.log(num * 2);
+// }
+// arr.forEach(multi2) //forEach as callback automatically pass argument and call.
+// arr.forEach(function (num, index) {
+//     console.log(`index ${index} value ${num*2}`)
+// })
+//  //we can declare arrow function also nd also can be function be created outside forEach
+// arr.forEach((num) => {
+//     console.log(num*2)
+// })
+
+// Map Method
+// const person = [{ name: "prashant", age: 23 }, { name: "Ram", age: 12 }]
+// const nameArr = person.map(naam => naam.name )
+// console.log(nameArr)
+// let a = [1, 2, 3, 4, 5]
+// const newArr = a.map((num, index) => {
+//     return [index, num * 2]
+// })
+// console.log(newArr)
+
+// Filter(Works on Boolean basis)
+// let a = [32, 3, 4, 4];
+// let ans = a.filter(function (num) {
+//     return num>5
+// })
+// console.log(ans)
+
+// function isEven(number) {
+//     return number%2==0
+// }
+// const evenNum = a.filter(isEven)
+// console.log(evenNum)
+
+// Reduce(reducing into one number)
+// const sum = a.reduce((accumulator, currentNumber) => { return accumulator + currentNumber; }, 100)
+// We can pass initial value of accumulator too,then current will be array first element.
+// console.log(sum)
+
+// const userCart = [{ pd: 1, price: 12000 }, { pd: 2, price: 20000 }]
+// const totalPrice = userCart.reduce((totalPrice, currentProduct) => {
+//     return totalPrice + currentProduct.price;
+// },0)
+// console.log(totalPrice)
+
+// acc  current  total
+// 0    12000    12000
+// 12000 20000   32000 //this way assigning of acc if giving initial value to reduce
