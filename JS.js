@@ -242,4 +242,28 @@
 // console.log(remainObj)//will create obj for remaining key value pair.
 
 // Objects in Array
-let arr=[obj1:]
+// let arr = [{ userId: 1, name: "prashant", age: 24 }, { userId: 2, name: "akash", age: 22 }, { userId: 3, name: "anand", age: 21 }]
+// for (let val of arr) {
+//     console.log(val.name)
+// }
+
+// Nested destructuring in Array
+// let [{name:userName,age}, ,c ] = arr;
+// console.log(userName)
+// console.log(age)
+// console.log(c)
+
+// Undefined + undefined = NaN or number+undefined =NaN
+
+// function expression and Arrow function
+// const even = function (n) {
+//     return n % 2 === 0;
+// }
+
+// const odd = (n) => (n%2===1) //single parameter and single return
+//     // return n % 2 === 1;
+
+// console.log(odd(3))
+
+
+
