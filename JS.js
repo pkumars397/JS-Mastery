@@ -596,3 +596,89 @@
 // person2.about()//goes to person2 object and find fName and lName.
 // person3.about()//goes to person3 object and find fName and lName.
 
+// console.log(this)//global object
+// console.log(window)//same as this.
+// console.log(this===window)
+// 'use strict'
+// function test() {
+//     console.log(this)//if we use window object then will come as undefind
+// }
+// test();//undefined if using use strict,window object me function hoga
+// window.test() //window object se call ,window object hi ayega use strict me bhi
+
+// call ,bind ,apply
+// function hello() { console.log("hello") }
+// hello() //both are same;
+// hello.call(); //can call a function by call();
+// const user1 = {
+//     firstName: "prashant",
+//     age: 24,
+//     about: function () {
+//         console.log(`${this.firstName} ${this.age}`);
+//     }
+    
+// }
+ 
+// const user2 = {
+//     firstName: "prashant",
+//     age: 24,
+
+//  }
+// //  user1.about()
+// user1.about.call(user2)//about use kar liya user1(borrow kiya method user1)
+// user1.about.call()//undefined undefined
+// user1.about.call(user1);//this ki value decide kar raha ye call;
+//  function about(hobby,favsong) {
+//     console.log(`${this.firstName} ${this.age} ${hobby} ${favsong}`);
+// }
+// const user1 = {
+//     firstName: "prashant",
+//     age: 24,
+    
+// }
+// const user2 = {
+//     firstName: "prashan",
+//     age: 24,
+    
+// }
+// about.call(user1, "singing", "in the end")
+
+// about.call(user2,"dance")
+
+// about.apply(user2, ["run", "Halo"])//same as call but only passing arguments like in array
+
+// const func = about.bind(user1, "guitar", "run the world")//bind returns function
+// func();
+
+// const user1 = {
+//     id: 1,
+//     name: "prashant",
+//     about:function(){
+//         console.log(this.id);
+//     }
+// }
+// const myfunc = user1.about.bind(user1) //binding nhi huyi
+// myfunc()
+
+// Arrow function this.
+// const user1 = {
+//         id: 1,
+//         name: "prashant",
+//     about: () => {
+//         console.log(this);//ek level uppar se lega this
+//         console.log(this.id, this.name);
+    
+//         }
+// }
+// // user1.about()
+// user1.about.call(user1)
+// shortening the about
+//  const user1 = {
+//     id: 1,
+//     name: "prashant",
+//     about(){
+//         console.log(this.id,this.name);
+//     }
+// }
+// user1.about();
+
