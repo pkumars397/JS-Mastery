@@ -291,7 +291,11 @@
 //     myName();
 //     myFather()
 // }
+// const newf = () => {
+//   test()
+// }
 // test();
+// newf()
 
 // Lexical Scope(Keep looking for variable value in first itself,then in function where that function is written,first in it ,then above function)
 //   const val=1
@@ -373,17 +377,20 @@
 
 // function can return anything,i.e int,string,object and even function;
 // function myFunc() {
+//     console.log("hello")
 //     function hello() {
 //         console.log("hello world")
+//         return "hello"
 //     }
+    
 //     return hello;
 // }
 // function hello() {
 //     console.log("hello world")
 // }
-// myFunc()()
+// console.log(myFunc()())
 
-// Higher Order function >> parameter as function and return a function.
+// Higher Order function >> argument as function and return a function.
 
 // ARRAY METHODS
 
@@ -426,8 +433,9 @@
 // console.log(evenNum)
 
 // Reduce(reducing into one number)
-// const sum = a.reduce((accumulator, currentNumber) => { return accumulator + currentNumber; }, 100)
-// We can pass initial value of accumulator too,then current will be array first element.
+// let a=[12,23,4,5,6]
+// const sum = a.reduce((accumulator, currentNumber) => { return accumulator + currentNumber; },0)
+// //   We can pass initial value of accumulator too,then current will be array first element.
 // console.log(sum)
 
 // const userCart = [{ pd: 1, price: 12000 }, { pd: 2, price: 20000 }]
@@ -439,3 +447,152 @@
 // acc  current  total
 // 0    12000    12000
 // 12000 20000   32000 //this way assigning of acc if giving initial value to reduce
+
+// sort() Method ,its first convert values into string then it will sort based on ASCII Character.
+// let a=["prashant","Prashant","Q","r"]
+//  //its changes the original Array
+// console.log(a.sort())
+//  //single return in Arrow Function can be written in one line;
+// let b = [1, 2, 3, 4, 33, 42, 56]
+// b.sort((a, b) => a - b) //same as Annonymouse function b.sort(function(a,b){ return a-b}) or b.sort((a,b)=>{return a-b})
+// console.log(b)
+// (a-b)>0 b,a Or (a-b) a,b
+
+// const products = [
+//     { productId: 1, productName: 'p1', price: 200 },
+//     { productId: 2, productName: 'p2', price: 100 },
+//     { productId: 3, productName: 'p3', price: 1000 },
+//     { productId: 4, productName: 'p4', price: 50 },
+// ]
+// // sort by price
+// const lowToHigh = products.slice(0).sort((a, b) => (a.price - b.price))// we maked a clone of products
+// const highToLow=[...products].sort((a,b)=>(b.price-a.price))//Again first maked the clone.
+// // products.sort((a,b)=>(a.price-b.price)) //Altering original products array
+// console.log(lowToHigh);
+// console.log(highToLow)
+// console.log(products)
+
+// find Method
+// const myArr = ["Helo", "khelo", "Lel", "Lion"];
+// const ans = myArr.find((string) => string.length === 3) //will store first string in array with length 3
+// console.log(ans)
+// const ans1 = products.find((product) => product.productId == 1)
+// console.log(ans1)
+
+// every method
+// const numbers = [2, 4, 6, 8];
+// const ans = numbers.every((numbers) => numbers % 2 == 0)//its checks every element as boolean
+// console.log(ans)
+
+// const ans = products.every((products) => products.price < 30000)
+// console.log(ans)
+
+// some Method (if any condition is true,then true)
+// let a = [12, 2, 34, 4];
+// console.log(a.some((num)=>num>40))
+
+// fill
+// const myArr = new Array(10).fill(-1)
+// console.log(myArr);
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+// console.log(arr.fill(0, 2, 5))//first one is value we want to fill and second is starting index,last is till excluded .
+
+// Splice Method
+// let w = ["hello", "prashant"]
+//  // w.splice(0, 1) //Original Array ko change(deleted item ko show karega)
+// w.splice(1,0,"inserted") //index,number of delete,inserting item
+// console.log(w)
+
+// Iterables (Jispe hum For of Laga sake) ie.string,array(object is not iterable)
+// Array like object ,jiske Pass length property and can access using index i.e string
+
+// Set (It is iterable)..unique items only,order is not guranteed,no index based access
+// const numbers = new Set([1, 2, 4, 4])
+// numbers.add([1,2,4,4])//we can pass iterables into set
+// console.log(numbers)
+// numbers.add(3);
+// console.log(numbers);
+// numbers.has(3)//boolean check for value
+// console.log(numbers.size)
+
+// Map(key-Value).. main diff in Object and map is that key can be any datatype in Map.
+// const person = new Map();
+// person.set("firstname", "prashant");
+// person.keys() //map iterator
+// person.get("firstname") // will return value crossponding to that key
+// person.has("firstname")//will check if key is present or not
+
+//map is iterable,Can use for of (ordered gurantee)
+// for (let keyValue of person) {
+//     console.log(keyValue)//will give map as array.
+// }
+// const person1 = {
+//     id: 1,
+//     firstname:"prashant"
+// }
+// const extraInfo = new Map();
+// extraInfo.set(person1, "{age:20,gender:male}");
+// console.log(extraInfo.get(person1).age);
+
+// Object Clone(stored into separate address)
+// const obj = { key1: "val1", key2: "val" };
+// const obj2 = obj;
+// console.log(obj2);
+// obj.key3 = "val3"//obj2 also change
+// console.log(obj2);
+
+// to avoid these things we do cloning
+// const obj2 = { ...obj }
+// const obj2=Object.assign({},obj)
+// obj.key3 = "val3"
+// console.log(obj2)
+// console.log(obj)
+
+// Optional chaining
+// const user = {
+//     id: 1,
+//     name:"prashant"
+// }
+// console.log(user.id);
+// console.log(user.address);//will give undefined,becoz no address in user
+// console.log(user.name.address)//will give undefined
+// console.log(user.address.house)//will error bcoz address not there and accessing house from address
+//we can fix this error via optional chaining(?.)
+// console.log(user?.id)//first it will check user is defined or not
+// console.log(user?.name?.fullname)//undefined.
+
+//  Crate your own method
+// const person = {
+//     fName: "pk",
+//     lName: "singh",
+//     about: function () {
+//           console.log(`person name is ${this.fName} ${this.lName}`);
+//     }
+// }
+// person.about();//this refers to the object on which we calling our function
+
+//this keyword
+// function info()  {
+//         console.log(`person name is ${this.fName} ${this.lName}`);
+//   }
+
+// const person1 = {
+//     fName: "pk",
+//     lName: "singh",
+//     about:info//about is the method
+// }
+// const person2 = {
+//     fName: "bk",
+//     lName: "singh",
+//     about:info//about is the method
+// }
+// const person3 = {
+//     fName: "sk",
+//     lName: "singh",
+//     about:info//about is the method
+// }
+
+// person1.about()//goes to person1 object and find fName and lName.
+// person2.about()//goes to person2 object and find fName and lName.
+// person3.about()//goes to person3 object and find fName and lName.
+
