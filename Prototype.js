@@ -19,3 +19,11 @@
 // }
 // console.log(test.prototype)
 // console.log(test.prototype.run())
+
+// const arr = [1, 2, 3, 4, 5,]
+// console.log(arr)//Proto sets to predefined array methods in Array prototype(array ke form me rhta hai prototype in Array ,which is also object)
+// const arr2 = new Array()
+// console.log(Object.getPrototypeOf(arr2))
+// console.log(Array.prototype)
+// arr2.prototype = []//we can also set prototype to empty
+// console.log(arr2.prototype)
