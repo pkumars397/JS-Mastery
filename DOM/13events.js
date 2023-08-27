@@ -10,4 +10,22 @@
 // 3.)addEventListeners
 
 // const btn = document.querySelector(".todo-list li")
-// btn.addEventListener("click", () => {console.log("you clicked me")}) 
+// btn.addEventListener("click", () => {console.log("you clicked me")})
+
+// value of this inside eventListener callback
+
+// const btn = document.querySelector(".btn-headline");
+// console.log(btn);
+// function myfunc() {
+//     console.log("clicked");
+//     console.log("val of this")
+//     console.log(this)
+// }
+// btn.addEventListener("click", myfunc);//value of this will be the btn itself(on which we are adding eventListner)
+
+//in case of arrow function this is window object
+// btn.addEventListener("click", () => {
+//     console.log("clicked");
+//     console.log("val of this")
+//     console.log(this)
+// })
