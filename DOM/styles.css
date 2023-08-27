@@ -74,6 +74,11 @@ a {
   text-align: center;
 }
 
+.bg-color {
+  background: #000;
+  color: #a51818;
+}
+
 .form-todo {
   min-height: 5vh;
   display: flex;

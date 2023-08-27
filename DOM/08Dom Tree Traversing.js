@@ -41,3 +41,4 @@
 // method to skip the \n and space method only meaning ful chile nodes
 // const body = document.querySelector("body");
 // console.log(body.children);
+
