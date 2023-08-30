@@ -3,7 +3,7 @@ function promise() {
         resolve("foo")
     })
 }
-
+// * then returns promise;
 promise()
     .then((value) => {
         console.log(value);
